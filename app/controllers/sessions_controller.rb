@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
   end
   def new
     unless User.exists?(email_address:'admin@123.com')
-      User.create!(email_address:'',
-      password:'',
-      password_confirmation:'')
+      User.create!(email_address:'admin@123.com',
+      password:'123',
+      password_confirmation:'123')
     end
   end
 
