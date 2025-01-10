@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
     include Notifications
-    
+
     has_many :subscribers, dependent: :destroy
     has_one_attached :featured_image
     has_rich_text :description
@@ -19,5 +19,4 @@ class Product < ApplicationRecord
       ProductMailer.with(product: self, subscriber: subscriber).in_stock.deliver_later
     end
   end
-  end
-  
+end
